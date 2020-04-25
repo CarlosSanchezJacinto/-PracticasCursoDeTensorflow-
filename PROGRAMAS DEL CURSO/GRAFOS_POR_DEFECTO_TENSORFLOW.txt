@@ -1,0 +1,14 @@
+#####GRAFOS POR DEFECTO###########
+import tensorflow as tf 
+#creamos el grafico por defecto no cambia
+print(tf.get_default_graph())
+#el grafico que creamos cambia 
+grafo1 = tf.Graph()
+grafo2 = tf.Graph()
+print(grafo1)
+##############
+print(tf.get_default_graph())
+print(grafo2)
+#para que el grafo1 sea por defecto
+with grafo1.as_default():
+	print(grafo1 is tf.get_default_graph())

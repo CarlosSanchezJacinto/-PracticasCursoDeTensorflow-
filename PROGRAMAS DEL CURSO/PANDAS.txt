@@ -1,0 +1,25 @@
+#########MODULO PANDAS########
+import pandas as pd
+#leer un fichero del ordenador y crear un fichero con pandas un 
+#primero nos movemos al fichero en donde esta el documentos
+dataframe = pd.read_csv('personas.csv')#abrimos el documento ya visualisamos
+print(dataframe)
+#podemos describir lo que esta en el dataframe
+print(dataframe.describe())
+#para solo visualisar el el contenido de la columna
+print(dataframe['NOMBRE'])
+#para solo visualisara la posision  que queramos 
+print(dataframe['NOMBRE'][0])
+#para ver dos columnas hay que manejarlas como una lista
+print(dataframe[['NOMBRE','APELLIDOS']])
+#para saber si un numero es mayor en una columna
+print(dataframe['SALARIO'] >30000)
+#hacer otro dataframe con los parametros del filtro
+filtro = dataframe['SALARIO'] >30000
+dataframe2 = dataframe[filtro]
+print(dataframe2)
+#para pasar los parrametros a un array
+array3 = dataframe2.values
+print(array3)
+#para las posiciones filas y columnas
+print(array3 [0,0])

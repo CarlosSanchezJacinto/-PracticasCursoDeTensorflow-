@@ -1,0 +1,21 @@
+############RED NEURONAL CON TENSORFLOW######
+# Z=W*X+B
+# W = VARIABLE
+# X = PLACEHOLDER
+# B = VARIABLE
+import tensorflow as tf
+import numpy as np
+#creamos la maris de 0-50 de 4 filas y 4 columnas
+aleatorio_a = np.random.uniform(0,50,(4,4))
+#creamos la matriz de 0-50 de 4 filas y 1 columna
+aleatorio_b = np.random.uniform(0,50,(4,1))
+#creamos los placeholder
+a = tf.placeholder(tf.float32)
+b = tf.placeholder(tf.float32)
+suma = a+b
+multiplicacion = a*b
+#creamos la sesion
+with tf.Session() as sesion :
+	#como los placeholder no tiene valores le asignamos unos con los array que creamos anterior mente 
+	resultado_suma = sesion.run(suma,feed_dict ={a:aleatorio_a,b:aleatorio_b})
+	print(resultado_suma)

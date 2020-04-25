@@ -1,0 +1,22 @@
+######VARIABLKES Y PLACEHOLDERS#####
+import tensorflow as tf
+#crear un tensor 
+tensor = tf.random_uniform((5,5),0,1) #5 filas 5 columnas valor minmo, valor maximo
+#creamos una variable y pasamos al tensor que emos creado
+variable = tf.Variable(initial_value = tensor)
+print(variable) 
+#las variables simpre deven de ser inicialisadas antes de ser utilisadas
+
+inicializador = tf.global_variables_initializer()
+with tf.Session() as sesion:
+	#iniciamos la variables
+	sesion.run(inicializador)
+	#lo guardamos en una variables y la ejecutamos
+	resultado = sesion.run(variable)
+#ya podemos imprimirlo con un print
+print(resultado)
+
+#placeholder 
+#los placeholder no es nesesario inisializarlos
+incognitas = tf.placeholder(tf.float32, shape=(20,20))
+print(incognitas)

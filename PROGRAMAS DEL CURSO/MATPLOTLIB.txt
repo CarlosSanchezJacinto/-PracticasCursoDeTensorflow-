@@ -1,0 +1,30 @@
+
+###########MATPLOTLIB VISUALISACION DE DATOS#####
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+#para crear una grafica con los datos de los arreglos de x,y
+x = np.arange(0,20)
+y = x**2
+print(x)
+print(y)
+plt.plot(x,y,'r') # g* g-- g=green r= red
+plt.title("titulo del grafico")
+plt.xlabel("eje x")
+plt.ylabel("eje y")
+plt.show()
+
+#un nuevo arreglo
+array = np.arange(0,50).reshape(10,5)#de 50 elementos de 10 filas y 5 columnas
+print(array)
+plt.imshow(array) #convierte un valor numerico a un color 
+plt.colorbar()
+plt.show()
+
+#nueva grafica
+array2 = np.random.randint(0,1000,100)#100 elementos entre 0-1,000
+print(array2)
+array2= array2.reshape(10,10)
+plt.imshow(array2)
+plt.colorbar()
+plt.show()

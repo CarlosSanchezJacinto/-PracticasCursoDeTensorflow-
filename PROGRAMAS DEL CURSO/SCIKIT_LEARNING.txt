@@ -1,0 +1,23 @@
+###### SCIKIT LEARN##########
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+#creamos un arreglo de 0-100 de 100 filas e 4 comunas
+datos = np.random.randint(0,100,(100,4)) 
+print(datos)
+#pasamos lod datos del arreglo aun dataframe pero con numbre las columnas
+dataframe = pd.DataFrame(data=datos, columns=['c1','c2','c3','etiqueta'])
+print(dataframe)
+#para dividir el dataframe solo las primera 3 columnas
+X = dataframe[['c1','c2','c3']]
+print(X)
+#solo se tima la columna etiqueta
+y = dataframe[['etiqueta']]
+print(y)
+#pasamos los valores de X,y a las valores de entrenamiento y test del 30%
+X_train, X_test, y_train, y_test = train_test_split(X,y, test_size = 0.3)
+#para ver si se dividio en 70 para entrenamiento y 30 para test
+print(X_train.shape)
+print(X_test.shape)
+print(y_train.shape)
+print(y_test.shape)
